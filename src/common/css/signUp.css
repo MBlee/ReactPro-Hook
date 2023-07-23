@@ -1,0 +1,46 @@
+.SignUp{
+	display:grid;
+	background-color: white;
+	box-shadow: 2px 2px 2px silver;
+}
+.signMain{
+	display: grid;
+	justify-content: center;
+	text-align: center;
+}
+.signMain:hover{
+	opacity: 0.8;
+}
+.SignUp .title{
+	font-size: 18px;
+	padding: 20px 20px 10px;
+	color: white;
+}
+.SignUp .price{
+	background-color: white;
+	color: seagreen;
+	width: 80px;
+	height: 80px;
+	border-radius: 80px;
+	margin: 10px auto;
+	line-height: 80px;
+	font-size: 21px;
+
+}
+.SignUp .detail{
+	padding: 10px 20px;
+	font-size: 13px;
+}
+.SignUp .signBtn{
+	outline: none;
+	border:none;
+	background-color: hotpink;
+	text-align: center;
+	width: 70%;
+	border-radius: 100px;
+	padding:5px 10px;
+	color: white;
+	font-weight: 700;
+	margin: 15px auto;
+	box-shadow: 1px 1px 1px silver;
+}

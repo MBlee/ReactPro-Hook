@@ -1,0 +1,31 @@
+.RegisterVIP{
+	display: grid;
+	text-align: center;
+	padding: 15px 10px;
+	justify-items: center;
+}
+.RegisterVIP h2{
+	font-size: 22px;
+	margin-bottom: 15px;
+}
+.RegisterVIP p{
+	font-size: 12px;
+	padding: 0 20px;
+}
+.RegisterVIP p:last-of-type{
+	margin-bottom: 15px;
+}
+.RegisterVIP strong{
+	font-size: 18px;
+	color: hotpink;
+	margin-bottom: 15px;
+}
+.RegisterVIP a{
+	background-color: hotpink;
+	color: white;
+	border-radius: 50px;
+	width: 120px;
+	height: 30px;
+	line-height: 30px;
+	box-shadow: 1px 1px 1px silver;
+}

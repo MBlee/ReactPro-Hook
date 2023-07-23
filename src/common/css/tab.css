@@ -1,0 +1,44 @@
+.Tab{
+	position: relative;
+}
+.tabMain{
+	width: 100vw;
+	height: 170px;
+}
+.tabMain ul{
+	display: flex;
+	height: 170px;
+}
+.tabMain .tabItem{
+	width: 100vw;
+	height: 170px;
+	flex: none;
+	overflow: hidden;
+}
+.tabMain .tabItem img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.tabIcon{
+	position: absolute;
+	left: 50%;
+	bottom: 10px;
+	transform: translateX(-50%);
+	width: 30%;
+	height: 20px;
+	display: grid;	
+	grid-gap: 10px;
+	place-content: center;
+	place-item: center;
+}
+.tabIcon .indicationItem{
+	height: 5px;
+	border-radius: 5px;
+	background-color: #EDE4FF;
+	opacity: .5;
+}
+.indicationItem.indicationActive{
+	background-color: #A076F9;
+}
+/*style={{width:props.data.length*100 + 'vw'}}*/
