@@ -10,7 +10,7 @@
 	position: absolute;
 	top: 0;
 	left:0;
-	background: skyblue url('common/image/table-bg.jpg') no-repeat center;
+	background: skyblue url('common/image/table-bg.jpg') no-repeat center/cover;
 	opacity: 0.5;
 	z-index: -1;
 }
