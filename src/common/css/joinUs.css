@@ -1,0 +1,40 @@
+.JoinUs{
+	text-align: center;
+}
+.JoinUs .head{
+	font-family: 宋体 ;
+	font-weight: 600;
+	margin: 15px auto;
+}
+.JoinUs .body{
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	background-color: gainsboro;
+	margin: 0 10px;
+	border: .5px solid silver;
+	box-shadow: 2px 2px 2px gainsboro;
+}
+.JoinUs .body li{
+	/*aspect-ratio: 1;*/
+	border: .5px solid silver;
+	height: calc(50vw - 10px);
+	display: grid;
+	place-content: center;
+	place-items: center;
+	row-gap: 10px; 
+	background-color: white;
+}
+.JoinUs .body li h2{
+	font-family: 宋体 ;
+	font-weight: 700;
+	font-size: 22px;
+	color: hotpink;
+}
+.JoinUs .body li p{
+	font-size: 14px;	
+}
+.JoinUs .body li:active
+{
+	color: white;
+	background-color: #3E001F;
+}

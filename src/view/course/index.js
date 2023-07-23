@@ -1,7 +1,7 @@
 import React from 'react'
 import Frame from 'component/Frame.js'
 import TimeTable from './timeTable'
-import Footer from 'common/component/footer'
+import Footer from 'common/component/Footer'
 export default function Course() {
 	return (
 		<div>

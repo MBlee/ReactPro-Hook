@@ -22,9 +22,9 @@ function Tab(props) {
 					return	scroll.getCurrentPage().pageX
 				})
 		})
-		autoScroll = setInterval(()=>{
-			scroll.next();
-		},2000)
+		// autoScroll = setInterval(()=>{
+		// 	scroll.next();
+		// },2000)
 		sRef.current.addEventListener("touchstart",(e)=>{
 			let {pageX,pageY} = e.changedTouches
 			touchPage.x = pageX
@@ -36,9 +36,9 @@ function Tab(props) {
 			if (Math.abs(touchPage.x-pageX)<5&&Math.abs(touchPage.y-pageY)<5) {
 				
 			}
-			autoScroll = setInterval(()=>{
-				scroll.next(200);
-			},1000)
+			// autoScroll = setInterval(()=>{
+			// 	scroll.next(200);
+			// },1000)
 		})
 		return ()=>{
 			clearInterval(autoScroll)
@@ -47,7 +47,7 @@ function Tab(props) {
 	return (
 		<div className='Tab'>
 			<div className='tabMain' ref={sRef}>
-				<ul style={{width:(props.data.length+1) * 100 + "vw"}}>
+				<ul className='tabWrap' style={{width:(props.data.length+1) * 100 + "vw"}}>
 					{
 						props.data.map(
 							(data,index)=>{

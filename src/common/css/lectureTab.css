@@ -1,0 +1,52 @@
+.LectureTab{
+	position: relative;
+	background: skyblue url('common/image/lecture-bg.png') no-repeat center/cover;
+}
+.LectureTab .title{
+	text-align: center;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	z-index: 100;
+	color: white;
+	transform: translateX(-50%);
+}
+.LectureTab .title h3{
+	font-size: 20px;
+	font-family: 楷体;
+	font-weight: 500;
+	margin: 10px 0 0;
+}
+.LectureTab .title p{
+	font-family: arial;
+	font-size: 12px;
+}
+
+.LectureTab .itemWrap{
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	place-items:center;
+	align-content: center;
+	text-align: center;
+	height: 100%;
+	height: 250px;
+}
+.LectureTab .itemWrap .item{
+	width: 30vw;
+}
+.LectureTab .itemWrap .item img{
+	width: 23vw;
+	height: 23vw;
+	border-radius: 100%;
+	border: 3px solid white;
+	margin-bottom: 10px;
+}
+.LectureTab .itemWrap .item p{
+	font-size: 14px;
+	padding: 3px 5px;
+	border: 2px solid white;
+	border-radius: 50px;
+	color: white;
+	width: 18vw;
+	margin: 0 auto;
+}
