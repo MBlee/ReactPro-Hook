@@ -14,7 +14,7 @@ export default function Frame(props) {
 	const scrollRef = useRef(null)
 	const [currentCoords, setCurrentCoords] = useState(null)
 	const dispatch = useDispatch()
-
+	let time = 0
 	useEffect(() => {
 		scroll = new BScroll(scrollRef.current,{
 			preventDefaultException:{tagName:/^(INPUT|TEXTAREA|BUTTON|SELECT|A)$/},
