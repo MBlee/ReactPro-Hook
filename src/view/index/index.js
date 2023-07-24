@@ -66,7 +66,7 @@ function Index(props) {
 	return (
 		<div>
 			<Frame isPullUp={true} bounce={true} fresh={fresh} pullUpLoad={pullUpLoad}>
-				<Tab data={imgData} 
+				<Tab data={imgData} autoScroll={true}
 						render={
 							(img)=>{
 								return (

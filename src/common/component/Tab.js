@@ -22,9 +22,11 @@ function Tab(props) {
 					return	scroll.getCurrentPage().pageX
 				})
 		})
-		// autoScroll = setInterval(()=>{
-		// 	scroll.next();
-		// },2000)
+		if (props.autoScroll) {
+			autoScroll = setInterval(()=>{
+				scroll.next();
+			},2000)
+		}
 		sRef.current.addEventListener("touchstart",(e)=>{
 			let {pageX,pageY} = e.changedTouches
 			touchPage.x = pageX
@@ -36,9 +38,11 @@ function Tab(props) {
 			if (Math.abs(touchPage.x-pageX)<5&&Math.abs(touchPage.y-pageY)<5) {
 				
 			}
-			// autoScroll = setInterval(()=>{
-			// 	scroll.next(200);
-			// },1000)
+			if (props.autoScroll) {
+				autoScroll = setInterval(()=>{
+					scroll.next();
+				},2000)
+			}
 		})
 		return ()=>{
 			clearInterval(autoScroll)

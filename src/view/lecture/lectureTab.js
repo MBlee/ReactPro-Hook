@@ -44,7 +44,7 @@ export default function LectureTab() {
 					<h3>宇宙银河队</h3>
 					<p>Cosmos Team</p>
 				</div>
-				<Tab data={dimensions} 
+				<Tab data={dimensions} autoScroll={false}
 						render={
 							(imgs)=>{
 								return (
