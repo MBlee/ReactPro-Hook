@@ -13,6 +13,7 @@ function Tab(props) {
 			scrollY:false,
 			eventPassthrough:'vertical',
 			momentum:false,
+			click:true,
 			snap:{
 				loop:true
 			}
@@ -28,13 +29,13 @@ function Tab(props) {
 			},2000)
 		}
 		sRef.current.addEventListener("touchstart",(e)=>{
-			let {pageX,pageY} = e.changedTouches
+			let {pageX,pageY} = e.changedTouches[0]
 			touchPage.x = pageX
 			touchPage.y = pageY
 			clearInterval(autoScroll)
 		})
 		sRef.current.addEventListener("touchend",(e)=>{
-			let {pageX,pageY} = e.changedTouches
+			let {pageX,pageY} = e.changedTouches[0]
 			if (Math.abs(touchPage.x-pageX)<5&&Math.abs(touchPage.y-pageY)<5) {
 				
 			}

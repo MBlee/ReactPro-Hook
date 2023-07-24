@@ -14,6 +14,7 @@
 	background-color: hotpink;
 	width: 90vw;
 	position: relative;
+	border-radius: 10px;
 }
 .LecModal .wrap .head{
 	width: 25vw;
@@ -33,6 +34,7 @@
 	width: 25px;
 	height: 25px;
 	line-height: 25px;
+	font-size: 15px;
 	text-align: center;
 	background-color: black;
 	border-radius: 50px;
@@ -43,15 +45,23 @@
 	margin-top: 16vw;
 	text-align: center;
 	font-family: 楷体;
+	margin-left: 20px;
+	margin-right: 20px;
+	padding-bottom: 15px;
+	border-bottom: 2px solid rgba(255,255,255,0.5);
 }
 .LecModal .wrap .content{
+	position: relative;
 	padding: 20px 0;
 	margin:20px;
 	max-height: 45vh;
-	border-top: 1px solid gainsboro;
-	text-indent: 2em;
+/*	border-top: 1px solid gainsboro;
+*/	text-indent: 2em;
 	font-size: 15px;
 	line-height: 25px;
 	text-overflow: ellipsis;
 	overflow: hidden;
+}
+.LecModal .wrap .content>div:nth-of-type(1){
+	padding: 10px;
 }

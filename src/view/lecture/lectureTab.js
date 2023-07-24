@@ -4,7 +4,7 @@ import Tab from 'common/component/Tab.js'
 import React from 'react'
 import {mock} from 'mockjs'
 
-export default function LectureTab() {
+export default function LectureTab({clicked}) {
 	const imgData = [
 		require('common/image/swiper1.jpg'),
 		require('common/image/swiper2.jpg'),
@@ -38,6 +38,20 @@ export default function LectureTab() {
 				return newArr
 			},newArr)
 		})(imgData);
+	const touchPage = {x:0,y:0}
+	const touches = {
+		onTouchStart(e){
+			let {pageX,pageY} = e.changedTouches[0]
+			touchPage.x = pageX
+			touchPage.y = pageY
+		},
+		onTouchEnd(e){
+			let {pageX,pageY} = e.changedTouches[0]
+			if (Math.abs(touchPage.x-pageX)<5&&Math.abs(touchPage.y-pageY)<5) {
+				clicked()					
+			}
+		}
+	}
 	return (
 		<div className='LectureTab'>
 				<div className="title">
@@ -52,8 +66,8 @@ export default function LectureTab() {
 										{
 											imgs.map((img,index)=>{
 													return (
-													<li key={index} className="item">
-														<a href="/#"><img src={img}/></a>
+													<li key={index} className="item" {...touches}>
+														<a href="/#" onClick={(e)=>{e.preventDefault()}}><img src={img}/></a>
 														<p>{mock('@cname')}</p>
 													</li>
 												)
