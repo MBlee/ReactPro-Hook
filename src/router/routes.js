@@ -10,7 +10,7 @@ const routes = [
 	{name:'登录',path:'/Login',exact:false,render(){ return <Login /> }},
 	{name:'课程',path:'/Course',exact:false,render(){ return <Course /> }},
 	{name:'讲师',path:'/Lecture',exact:false,render(){ return <Lecture /> }},
-	{name:'工作',path:'/Work',exact:false,render(){ return <Work /> }}
+	{name:'工作',path:'/Work/:Id',exact:false,render(){ return <Work /> }}
 
 ]
 export const navLinks = [

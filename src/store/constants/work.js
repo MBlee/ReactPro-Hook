@@ -1,0 +1,3 @@
+export const WORKSET = "WORKSET"
+export const WORKLOADING = "WORKLOADING"
+export const WORKENDLOADING = "WORKENDLOADING"

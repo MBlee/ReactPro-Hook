@@ -1,4 +1,7 @@
 export {LOADING,ENDLOADING,UPDATE} from './works'
+export {WORKLOADING,WORKENDLOADING,WORKSET} from './work'
+export {GOODS,NO_GOODS} from './goods'
+export {COMMENT_LOADING,COMMENT_ENDING,COMMENT_RESET,COMMENT_UPDATE,COMMENT_ADD} from './comment'
 export const RENAME = 'RENAME'
 export const LOGIN = 'LOGIN'
 export const LOGOUT = 'LOGOUT'

@@ -17,9 +17,13 @@ export default function Frame(props) {
 	let time = 0
 	useEffect(() => {
 		scroll = new BScroll(scrollRef.current,{
-			preventDefaultException:{tagName:/^(INPUT|TEXTAREA|BUTTON|SELECT|A)$/},
+			preventDefaultException:{
+				tagName:/^(INPUT|TEXTAREA|BUTTON|SELECT|A)$/,
+				className:/(^|\s)sClick(\s|$)/
+			},
 			pullUpLoad:props.isPullUp?{threshold:100}:false,
-			bounce:props.bounce
+			bounce:props.bounce,
+			click:true
 		})
 
 		if (props.isPullUp) {

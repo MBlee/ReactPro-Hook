@@ -68,11 +68,11 @@ function Tab(props) {
 			</div>
 			<ul className='tabIcon' style={{"gridTemplateColumns": `repeat(${props.data.length},1fr)`}}>
 				{
-					props.data.map(
+					props.data.length>1?props.data.map(
 							(cla,index)=>{
 								return <li className={(index==currentPage)?"indicationItem indicationActive":"indicationItem"} key={index}></li>
 							}
-					)
+					):''
 				}				
 			</ul>
 		</div>

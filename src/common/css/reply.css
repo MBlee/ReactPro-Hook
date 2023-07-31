@@ -1,0 +1,38 @@
+.Reply{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 40px;
+	background-color: hotpink;
+	z-index: 200;
+}
+.Reply button{
+	background-color: transparent;
+	border: none;
+	color: white;
+	text-align: center;
+	line-height: 40px;
+	width: 100%;
+	height: 40px;
+	font-size: 16px;
+	font-weight: 600;
+}
+.Reply .text{
+	position: relative;
+	top:-40px;
+	background-color: white;
+	padding: 15px;
+	box-shadow: 0 0 4px silver;
+	transition: .2s;
+}
+.Reply textarea{
+	width: 100%;
+	height: 130px;
+	border: 2px solid silver;
+	padding: 10px;
+	font-size: 15px;
+}
+.Reply .put{
+	background-color: silver;
+}

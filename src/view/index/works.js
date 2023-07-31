@@ -1,4 +1,5 @@
 import React,{useEffect,useContext} from 'react'
+import {useHistory} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {loading} from 'store/actions'
 import "common/css/works.css"
@@ -15,21 +16,25 @@ function Works(props) {
 		require('common/image/swiper4.jpg'),
 		require('common/image/swiper5.jpg')
 	]	
+	const history = useHistory()
 	return (
 		<div className="Works">
 			<h3>学员作品</h3>
 			<ul>
 				{
 					works.length?works.map(({name,commentsCount,goodsCount,image},index)=>{
-						return <li key={index}>
-							<a href="www.baidu.com" className="item">
-								<img src={image} alt="" onLoad={()=>{
+						return <li key={index} className='sClick'
+							onClick={()=>{
+								history.push({pathname:`/work/${index}`,state:{name,commentsCount,goodsCount,image}})
+							}}>
+							<a href="/#" className="item sClick" onClick={	(e)=>{ e.preventDefault() }}>
+								<img src={image} alt="" className='sClick' onLoad={()=>{
 									props.loaded()
 								}}/>
-								<span>
-									<strong>{name}</strong>
-									<em>✉ {commentsCount}</em>
-									<em>❤ {goodsCount}</em>
+								<span className='sClick'>
+									<strong className='sClick'>{name}</strong>
+									<em className='sClick'>✉ {commentsCount}</em>
+									<em className='sClick'>❤ {goodsCount}</em>
 								</span>
 							</a>
 						</li>
