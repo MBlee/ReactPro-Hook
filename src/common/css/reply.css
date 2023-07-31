@@ -3,12 +3,14 @@
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	height: 40px;
-	background-color: hotpink;
+	height: 80px;
+	background-color: white;
 	z-index: 200;
 }
 .Reply button{
-	background-color: transparent;
+	position: absolute;
+	top: 0;
+	background-color: hotpink;
 	border: none;
 	color: white;
 	text-align: center;
@@ -20,11 +22,11 @@
 }
 .Reply .text{
 	position: relative;
-	top:-40px;
+	top:80px;
 	background-color: white;
 	padding: 15px;
 	box-shadow: 0 0 4px silver;
-	transition: .2s;
+	transition: .5s;
 }
 .Reply textarea{
 	width: 100%;

@@ -19,6 +19,18 @@ export default function Reply(props) {
 				e.stopPropagation()
 			}
 		}>
+		<div className="text" style={
+				{
+					transform:show?'translateY(-100%)':'translateY(0)',
+					top:show?'0px':'80px'
+				}
+			}>
+			<textarea value={content} onChange={
+				(e)=>{
+					setContent(e.target.value)
+				}
+			} name="" id="" cols="30" rows="10"></textarea>
+		</div>
 			{!show?<button onClick={
 					(e)=>{
 						if (!user) {
@@ -61,17 +73,7 @@ export default function Reply(props) {
 			}
 				
 				
-				<div className="text" style={
-						{
-							transform:show?('translateY(-100%)'):'translateY(40px)'
-						}
-					}>
-					<textarea value={content} onChange={
-						(e)=>{
-							setContent(e.target.value)
-						}
-					} name="" id="" cols="30" rows="10"></textarea>
-				</div>
+
 		</footer>
 	)
 }
