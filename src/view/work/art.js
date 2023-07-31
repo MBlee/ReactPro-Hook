@@ -8,7 +8,6 @@ export default function Art() {
 	const [list, setList] = useState('')
 	useEffect(() => {
 		const imageSrc = require(`common/image/swiper${mock('@integer(1,5)')}.jpg`)
-		console.log();
 		let h = mock({
 			's':'<p>@csentence(10,30) </p>',
 			'hp':'<h3>@ctitle(8,10) </h3><p>@cparagraph(10,20) </p>',
