@@ -19,7 +19,7 @@ export default function Comment() {
 							<p className="content">{content}</p>
 							<p className="bottom">
 								<span><ToDate date={date}/></span>
-								<span>✎</span>
+								<span className='iconfont icon-xiaoxi-zhihui'></span>
 							</p>
 							
 								{
@@ -33,7 +33,7 @@ export default function Comment() {
 															<p className="content">回复<strong>{username}: </strong>{content}</p>
 															<p className="bottom">
 																<span><ToDate date={date}/></span>
-																<span>✎</span>
+																<span className='iconfont icon-xiaoxi-zhihui'></span>
 															</p>
 													</li>
 													)

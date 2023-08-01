@@ -51,9 +51,9 @@ export default function Revert(props) {
 		<div className='Revert'>
 			<div className="goods">
 				<em className='text'>有{count}人觉得很赞</em>
-				<em className={state.goods.goods?'icon isGoods':'icon'}
+				<em className={state.goods.goods?'icon isGoods iconfont icon-xihuan':'icon iconfont icon-xihuan'}
 					{...touches}
-				>❤</em>
+				></em>
 			</div>
 			<div className="input">
 				<input type="text" placeholder='发表评论' value={content} 

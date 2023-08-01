@@ -1,0 +1,13 @@
+.Captcha{
+	display: grid;
+	background-color: gainsboro;
+	justify-content: center;
+	grid-template-columns: repeat(auto-fit,minmax(0,1fr));
+	justify-items: center;
+	cursor: pointer;
+	height: 40px;
+}
+.Captcha span{
+	/*padding: 5px;*/
+	/*user-select: none;*/
+}

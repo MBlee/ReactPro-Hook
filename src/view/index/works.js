@@ -33,8 +33,8 @@ function Works(props) {
 								}}/>
 								<span className='sClick'>
 									<strong className='sClick'>{name}</strong>
-									<em className='sClick'>✉ {commentsCount}</em>
-									<em className='sClick'>❤ {goodsCount}</em>
+									<em className='sClick iconfont icon-bianji'> {commentsCount}</em>
+									<em className='sClick iconfont icon-xihuan'> {goodsCount}</em>
 								</span>
 							</a>
 						</li>

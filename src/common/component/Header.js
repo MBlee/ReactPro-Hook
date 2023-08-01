@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import { useHistory } from 'react-router-dom';
 import {loginAsync,logoutAction,loginAction} from 'store/actions'
+import 'common/font/iconfont.css'
 
 function Header(props) {
 	const history = useHistory()
@@ -19,7 +20,7 @@ function Header(props) {
 						e.preventDefault()
 						props.show()
 					}
-				}>☰</a>
+				}><i className="iconfont icon-a-rightindentation"></i></a>
 			</nav>
 			<h1 className='title'>lee.com</h1>
 			<a className='user' href="/#" onClick={
@@ -28,7 +29,7 @@ function Header(props) {
 					history.push('/Login')
 					props.dispatch(loginAction({user:''}))
 				}
-			}>{props.login.user?props.login.user:'☻'}
+			}>{props.login.user?props.login.user:<i className="iconfont icon-icon-user-fill "></i>}
 			</a>
 		</div>
 	)

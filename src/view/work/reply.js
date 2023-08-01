@@ -40,7 +40,7 @@ export default function Reply(props) {
 						setShow(true)
 					}
 				}>
-					 回复本贴 ✎
+					 回复本贴 <i className='icon-edit iconfont'></i>
 				</button>
 				:<button className={put?'put':''} onClick={
 					()=>{
