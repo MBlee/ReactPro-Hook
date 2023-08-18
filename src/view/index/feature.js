@@ -1,6 +1,7 @@
-import React from 'react'
+import React,{memo} from 'react'
 import "common/css/feature.css"
-export default function Feature(props) {
+function Feature(props) {
+	if (!props.data) return ''
 	const {title,featureList} = props.data
 	return (
 		<div className="Feature">
@@ -18,3 +19,4 @@ export default function Feature(props) {
 		</div>
 	)
 }
+export default memo(Feature)

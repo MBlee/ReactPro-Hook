@@ -2,6 +2,7 @@ import React,{useState,useEffect,useRef} from 'react'
 import BScroll from 'better-scroll'
 import 'css/tab.css'
 function Tab(props) {
+	if (!props.data) return (<div>没内容。</div>)
 	let scroll = null
 	const sRef = useRef(null)
 	let autoScroll = 0
@@ -19,15 +20,10 @@ function Tab(props) {
 			}
 		})
 		scroll.on('scrollEnd',()=>{
-				setCurrentPage(()=>{
-					return	scroll.getCurrentPage().pageX
-				})
+				// console.log(scroll.getCurrentPage());
+				// setCurrentPage(scroll.getCurrentPage().pageX)
 		})
-		if (props.autoScroll) {
-			autoScroll = setInterval(()=>{
-				scroll.next();
-			},2000)
-		}
+
 		sRef.current.addEventListener("touchstart",(e)=>{
 			let {pageX,pageY} = e.changedTouches[0]
 			touchPage.x = pageX
@@ -41,10 +37,15 @@ function Tab(props) {
 			}
 			if (props.autoScroll) {
 				autoScroll = setInterval(()=>{
-					scroll.next();
+					scroll.next(200);
 				},2000)
 			}
 		})
+		if (props.autoScroll) {
+			autoScroll = setInterval(()=>{
+				scroll.next(200);
+			},2000)
+		}
 		return ()=>{
 			clearInterval(autoScroll)
 		}
@@ -52,7 +53,7 @@ function Tab(props) {
 	return (
 		<div className='Tab'>
 			<div className='tabMain' ref={sRef}>
-				<ul className='tabWrap' style={{width:(props.data.length+1) * 100 + "vw"}}>
+				<ul className='tabWrap'>
 					{
 						props.data.map(
 							(data,index)=>{
@@ -66,13 +67,14 @@ function Tab(props) {
 					}
 				</ul>
 			</div>
-			<ul className='tabIcon' style={{"gridTemplateColumns": `repeat(${props.data.length},1fr)`}}>
+			<ul className='tabIcon' 
+				style={{"gridTemplateColumns": `repeat(${props.data.length},1fr)`}}>
 				{
-					props.data.length>1?props.data.map(
+					props.data.map(
 							(cla,index)=>{
 								return <li className={(index==currentPage)?"indicationItem indicationActive":"indicationItem"} key={index}></li>
 							}
-					):''
+					)
 				}				
 			</ul>
 		</div>

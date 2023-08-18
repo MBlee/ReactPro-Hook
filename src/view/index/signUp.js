@@ -1,7 +1,6 @@
-import React from 'react'
+import React,{memo} from 'react'
 import "common/css/signUp.css"
-export default function SignUp(props) {
-	console.log();
+function SignUp(props) {
 	const {pTitle,pDetail,price} = props.data
 	const colors1 = [
 		'#7A9D54','#7C9D96','#75C2F6','#A076F9','#FF52A2','#35A29F','#3F2E3E','#EF6262'
@@ -33,3 +32,4 @@ export default function SignUp(props) {
 		</div>
 	)
 }
+export default memo(SignUp)

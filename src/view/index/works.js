@@ -1,4 +1,4 @@
-import React,{useEffect,useContext} from 'react'
+import React,{useEffect,useContext,memo} from 'react'
 import {useHistory} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {loading} from 'store/actions'
@@ -47,4 +47,4 @@ function Works(props) {
 		</div>
 	)
 }
-export default connect(res=>res.works)(Works)
+export default memo(connect(res=>res.works)(Works))

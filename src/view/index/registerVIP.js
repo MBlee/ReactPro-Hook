@@ -1,6 +1,7 @@
-import React from 'react'
+import React,{memo} from 'react'
 import "common/css/registerVIP.css"
-export default function RegisterVIP(props) {
+function RegisterVIP(props) {
+	if (!props.data) return ''
 	const {title,detail,price} = props.data
 	return (
 		<article className="RegisterVIP">
@@ -13,3 +14,4 @@ export default function RegisterVIP(props) {
 		</article>
 	)
 }
+export default memo(RegisterVIP)

@@ -1,4 +1,4 @@
-import React,{useEffect,useState,useContext} from 'react'
+import React,{useEffect,useState,useContext,memo} from 'react'
 import {connect,useSelector} from 'react-redux'
 import Frame from 'component/Frame.js'
 import Tab from 'component/Tab'
@@ -12,41 +12,7 @@ import "common/css/index.css"
 import {mock} from 'mockjs'
 
 function Index(props) {
-	const imgData = [
-		require('common/image/swiper1.jpg'),
-		require('common/image/swiper2.jpg'),
-		require('common/image/swiper3.jpg'),
-		require('common/image/swiper4.jpg'),
-		require('common/image/swiper5.jpg')
-	]
-	const signData = [
-		{
-			pTitle:`WEB前端开发\n零基础课程`,
-			price:0,
-			pDetail:`PC静态页面，移动静态页面制作...`
-		},{
-			pTitle:`WEB前端开发\n零基础课程`,
-			price:4800,
-			pDetail:`PC静态页面，移动静态页面制作...`
-		},{
-			pTitle:`WEB前端开发\n零基础课程`,
-			price:9200,
-			pDetail:`PC静态页面，移动静态页面制作...`
-		},{
-			pTitle:`WEB前端开发\n零基础课程`,
-			price:0,
-			pDetail:`PC静态页面，移动静态页面制作...`
-		},
-	]
-	const registData = mock({
-		"title|1":"@first",
-		"detail|3":["@csentence"],
-		"price|100-200":1
-	})
-	const featureData = mock({
-		"title":"产品特色",
-		"featureList|4":[{"icon":"@image(100x100,@color)","detail|2":"@csentence"}]
-	})
+
 	const pullUpLoad = (scroll)=>{
 		props.dispatch(loading()).then((res)=>{
 			scroll.refresh()
@@ -63,10 +29,54 @@ function Index(props) {
 	}
 
 	const [fresh, setFresh] = useState(false)
+	const [imgData, setImgData] = useState(null)
+	const [signData, setSignData] = useState(null)
+	const [registData, setRegistData] = useState(null)
+	const [featureData, setFeatureData] = useState(null)
+
+	useEffect(() => {
+		setImgData([
+			require('common/image/swiper1.jpg'),
+			require('common/image/swiper2.jpg'),
+			require('common/image/swiper3.jpg'),
+			require('common/image/swiper4.jpg'),
+			require('common/image/swiper5.jpg')
+		])
+		setSignData([
+			{
+				pTitle:`WEB前端开发\n零基础课程`,
+				price:0,
+				pDetail:`PC静态页面，移动静态页面制作...`
+			},{
+				pTitle:`WEB前端开发\n零基础课程`,
+				price:4800,
+				pDetail:`PC静态页面，移动静态页面制作...`
+			},{
+				pTitle:`WEB前端开发\n零基础课程`,
+				price:9200,
+				pDetail:`PC静态页面，移动静态页面制作...`
+			},{
+				pTitle:`WEB前端开发\n零基础课程`,
+				price:0,
+				pDetail:`PC静态页面，移动静态页面制作...`
+			},
+		])
+		setRegistData(mock({
+			"title|1":"@first",
+			"detail|3":["@csentence"],
+			"price|100-200":1
+		}))
+		setFeatureData(mock({
+			"title":"产品特色",
+			"featureList|4":[{"icon":"@image(100x100,@color)","detail|2":"@csentence"}]
+		}))
+	}, [])
+
 	return (
 		<div>
 			<Frame isPullUp={true} bounce={true} fresh={fresh} pullUpLoad={pullUpLoad}>
-				<Tab data={imgData} autoScroll={true}
+				<Tab data={imgData} 
+						autoScroll={true}
 						render={
 							(img)=>{
 								return (
@@ -77,9 +87,9 @@ function Index(props) {
 				</Tab>
 				<section className="sign-section">
 					{
-						signData.map((data,index)=>{
+						signData?signData.map((data,index)=>{
 							return <SignUp data={data} key={index}></SignUp>
-						})
+						}):''
 					}
 				</section>
 				<RegisterVIP data={registData}></RegisterVIP>
