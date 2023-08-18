@@ -15,8 +15,8 @@ function Index(props) {
 
 	const pullUpLoad = (scroll)=>{
 		props.dispatch(loading()).then((res)=>{
-			scroll.refresh()
 			scroll.finishPullUp()
+			scroll.refresh()
 			const state = store.getState()
 			if (state.works.data.length>10) {
 				props.dispatch({
@@ -25,7 +25,6 @@ function Index(props) {
 				scroll.closePullUp()
 			}
 		})
-		
 	}
 
 	const [fresh, setFresh] = useState(false)
@@ -95,9 +94,8 @@ function Index(props) {
 				<RegisterVIP data={registData}></RegisterVIP>
 				<Feature data={featureData}></Feature>
 				<Works loaded={()=>{
-					setFresh((f)=>{
-						return !f;
-					})
+					const f = !fresh
+					setFresh(f)
 				}}></Works>
 				
 			</Frame>

@@ -12,7 +12,6 @@ export default function Frame(props) {
 	const uHeight = useInnerHeight()
 	let scroll = null
 	const scrollRef = useRef(null)
-	const [currentCoords, setCurrentCoords] = useState(null)
 	const dispatch = useDispatch()
 	let time = 0
 	useEffect(() => {
@@ -25,21 +24,18 @@ export default function Frame(props) {
 			bounce:props.bounce,
 			click:true
 		})
-
 		if (props.isPullUp) {
-					scroll.on('pullingUp',()=>{
-						props.pullUpLoad(scroll)
-					})
-					scroll.on('scrollEnd',(e)=>{
-						setCurrentCoords((c)=>{
-							dispatch(indexCoords({...e}))
-							return {...e}
-						})
-					})
+			scroll.on('pullingUp',()=>{
+				props.pullUpLoad(scroll)
+			})
+			scroll.on('scrollEnd',(e)=>{
+
+			})
 		}
 
 	}, [])
 	useEffect(() => {
+		console.log('更新一下');
 		scroll&&scroll.refresh()
 	}, [props.fresh])
 	return (

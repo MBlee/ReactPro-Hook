@@ -3,3 +3,12 @@
   user-select: none;
 }
 
+.clearFix{
+	
+}
+.clearFix::after{
+	content: '';
+	display: block;
+	clear: both;
+	overflow: hidden;
+}

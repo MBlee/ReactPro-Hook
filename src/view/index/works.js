@@ -1,4 +1,4 @@
-import React,{useEffect,useContext,memo} from 'react'
+import React,{useEffect,useRef,useContext,memo} from 'react'
 import {useHistory} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {loading} from 'store/actions'
@@ -6,9 +6,18 @@ import "common/css/works.css"
 import {mock} from 'mockjs'
 function Works(props) {
 	const {data:works,isLoading,loadingEnd} = props
+	const ref = useRef(null)
 	useEffect(() => {
 		props.dispatch(loading())
 	}, [])
+	useEffect(() => {
+		const imgs = ref.current.querySelectorAll('img')
+		imgs.forEach((img)=>{
+			img.addEventListener('load',()=>{
+				props.loaded()
+			})
+		})
+	}, [works])
 	const imgData = [
 		require('common/image/swiper1.jpg'),
 		require('common/image/swiper2.jpg'),
@@ -18,7 +27,7 @@ function Works(props) {
 	]	
 	const history = useHistory()
 	return (
-		<div className="Works">
+		<div className="Works" ref={ref}>
 			<h3>学员作品</h3>
 			<ul>
 				{
@@ -28,9 +37,7 @@ function Works(props) {
 								history.push({pathname:`/work/${index}`,state:{name,commentsCount,goodsCount,image}})
 							}}>
 							<a href="/#" className="item sClick" onClick={	(e)=>{ e.preventDefault() }}>
-								<img src={image} alt="" className='sClick' onLoad={()=>{
-									props.loaded()
-								}}/>
+								<img src={image} alt="" className='sClick'/>
 								<span className='sClick'>
 									<strong className='sClick'>{name}</strong>
 									<em className='sClick iconfont icon-bianji'> {commentsCount}</em>

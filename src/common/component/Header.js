@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{memo} from 'react'
 import {connect} from 'react-redux'
 import { useHistory } from 'react-router-dom';
 import {loginAsync,logoutAction,loginAction} from 'store/actions'
@@ -35,4 +35,4 @@ function Header(props) {
 	)
 }
 
-export default connect(res=>res)(Header)
+export default memo(connect(res=>res)(Header))

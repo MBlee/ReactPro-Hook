@@ -3,7 +3,7 @@ import "common/css/signUp.css"
 function SignUp(props) {
 	const {pTitle,pDetail,price} = props.data
 	const colors1 = [
-		'#7A9D54','#7C9D96','#75C2F6','#A076F9','#FF52A2','#35A29F','#3F2E3E','#EF6262'
+		'#435B66','#5C5470','#4477CE','#2E8A99','#526D82','#5C469C','#F15A59','#0E8388'
 	]
 	const colors2 = [
 		'#A1CCD1','#E9B384','#FBEEAC','#D4E2D4','#D7BBF5','#FFB07F','#F8FDCF','#FAF0D7'

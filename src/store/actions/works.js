@@ -14,7 +14,7 @@ export const loading =()=>{
 							"name":"@ctitle",
 							"commentsCount|10-100":1,
 							"goodsCount|10-100":1,
-							"image":"@image(200x200,@color)"
+							"image":"@image(200x200)"
 						}
 					]
 				})

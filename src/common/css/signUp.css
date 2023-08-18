@@ -1,7 +1,7 @@
 .SignUp{
 	display:grid;
 	background-color: white;
-	box-shadow: 2px 2px 2px silver;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .signMain{
 	display: grid;
